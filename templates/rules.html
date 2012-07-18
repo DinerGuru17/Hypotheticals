@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/static/main.css" />
+	<title>U.W.Hypotheticals!</title>
+</head>
+
+<body>
+	<div class="upper-left">
+		U.W.Hypotheticals
+	</div>
+	<div class="upper-right">
+		{% if player %}
+			{{player.username}} (<a class="login-link" href="/logout">logout</a>)
+		{% else %}
+			<a href="/login">login</a> | <a href="/signup">signup</a>
+		{% endif %}
+	</div>
+
+	<h1>Rules</h1>
+	<ol class="rules">
+		<li>Before you can do anything besides read the rules, you must <b>login</b>.
+			<ul>
+				<li>Usernames must be between 3 and 20 characters and must be only letters or numbers.</li>
+				<li>Passwords have the same constraints as usernames.</li>
+				<li>Passwords are <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)"> salted</a> and stored as hashes. They are <em>not</em> stored as plain text.</li>
+				<li>Optionally store an email!</li>
+			</ul>
+		</li>
+		<br>
+		<li>Before you can play you must <b>Submit Questions</b>.
+			<ul>
+				<li>Submitted questions will be linked to your username and will be used in any games you join.</li>
+				<li>One question will be used for each round of play, and the game ends when there are fewer than four questions remaining.</li>
+				<li>If you want to have a long lasting game, make sure to submit lots of questions!</li>
+			</ul>
+		</li>
+		<br>
+		<li>Create a game and get ready to play.
+			<ul>
+				<li>One player chooses a name and <b>creates</b> the game.</li>
+				<li>All other players <b>join</b> the created game by entering the game's name.</li>
+				<li>If you exited the game, you can <b>rejoin</b> to re-enter a game you are already playing</li>
+				<li>When you join a game, choose a <b>pseudonym</b> to use.  This will be the name other players see as you play your game.</li>
+				<li>You must have at least three players to begin a game.  Five or six players is recommended.</li>
+			</ul>
+		</li>
+		<br>
+		<li>The Game Play, get excited.
+			<ul>
+				<li>One player is the <b>Questioner</b>, she chooses the question the other players will answer.</li>
+				<li>One player is the <b>Reader</b>, he will read the answers annonomously to the Questioner.</li>
+				<li>All other players are <b>Regular Players</b>, they answer the question chosen by the Questioner.</li>
+				<li>When all players, except the Questioner, have answered the question, the Reader reads all the answers out loud. He does not read who wrote the question.</li>
+				<li>The Questioner must guess who wrote each answer.</li>
+				<li>If the Questioner guesses a player correctly, the Reader places a check next to that player's name. One point is awarded for each correct guess.</li>
+				<li>At the end of a round, the Questioner becomes the Reader, the Reader becomes a Regular Player, and one regular player becomes the Questioner.</li>
+			</ul>
+		</li>
+		<br>
+		<li>Enjoy the game. More information below:
+			<ul>
+				<li>If you would like to see how we store information, or just look at the code, find it on <a href="https://github.com/IAmThePan/Hypotheticals"> GitHub</a>!</li>
+				<li>If you have questions or concerns, email them to poseidon@uglywalrus.com.</li>
+				<li>This version of Hypotheticals was uploaded to UglyWalrus.com on July 18, 2012.</li>
+			</ul>
+		</li>
+	</ol>
+</body>

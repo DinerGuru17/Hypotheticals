@@ -1,0 +1,19 @@
+{% extends "base_round.html" %}
+
+{% block player_type %}
+	<form method="post">
+		{{question_message}}
+		<br>
+		{% for question in questions %}
+		<input type="radio" name="question_id" value="{{question[0]}}" />
+		{{question[1]}}
+		<br />
+		{% endfor %}
+		<br>
+		{{question_error}}
+		<div class="login-box">
+			<input class="button" type="submit" name="button" value="{{submit_text}}">
+		</div>
+		<br>
+	</form>
+{% endblock %}

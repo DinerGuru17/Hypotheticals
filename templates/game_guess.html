@@ -1,0 +1,26 @@
+{% extends "base_round.html" %}
+
+{% block player_type %}
+	<form method="post">
+		<div>Question: {{Question_Text}}</div>
+		<br>
+		<table>
+			<tr>
+				<td>Correct?</td>
+				<td>Pseudonym</td>
+				<td>Answer</td>
+			{% for player in r_players %}
+			<tr>
+				<td> <input type="checkbox" name="{{player}}"/> </td>
+				<td>{{player.split('|')[0]}}</td>
+				<td>{{player.split('|')[1]}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		<br>
+		{{guess_message}}
+		<div class="login-box">
+			<input class="button" type="submit" name="button" value="{{submit_text}}">
+		</div>
+	</form>
+{% endblock %}

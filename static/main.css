@@ -1,0 +1,74 @@
+.upper-left {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    color: gray;
+}
+
+.upper-right {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    color: gray;
+}
+
+.lower-left {
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    color: gray;
+}
+
+.lower-right {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    color: gray;
+}
+
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -250px;
+}
+
+.button {
+    width: 500px;
+    height: 100px;
+    font-size: 30px;
+    background-color: gray;
+}
+
+.login-box {
+    font-size: 30px;
+}
+
+.question-submit {
+    width: 500px;
+}
+
+.rules {
+    width: 80%;
+    margin-left: 5%;
+}
+
+h1 {
+    margin-left: 5%;
+}
+
+.text {
+    width: 500px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    background-color: gray;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+}

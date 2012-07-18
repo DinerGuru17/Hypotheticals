@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div>
+	{% for question in questions %}
+		<div>Submitted By: {{player.username}} (ID: {{question.Submitted_PID}})</div>
+		<div>Category: {{question.Category}}</div>
+		<div>Question: {{question.Question}}</div>
+		<br><br>
+	{% endfor %}
+	</div>
+{% endblock %}

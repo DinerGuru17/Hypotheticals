@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div>
+		<form method="post">
+			<div class="login-box">
+				<table>
+					<tr> 
+						<td> Game ID: </td>
+						<td> <input type="text" name="game_id" value="{{game_id}}"> </td>
+						<td class="error"> {{game_error}} </td>
+					</tr>
+					{% if "Rejoin" not in Game_Text %}
+						<tr>
+							<td> Pseudonym: </td>
+							<td> <input type="text" name="pseudonym" value="{{pseudonym}}"> </td>
+							<td class="error"> {{pseudonym_error}} </td>
+						</tr>
+					{% endif %}
+				</table>
+			</div>
+			<br>
+			<div class="login-box">
+				<input class="button" type="submit" value="{{Game_Text}}">
+			</div>
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/static/main.css" />
+	<title>U.W.Hypotheticals!</title>
+</head>
+
+<body>
+	<div class="upper-left">
+		U.W.Hypotheticals
+	</div>
+	<div class="upper-right">
+		{% if player %}
+			{{player.username}} (<a class="login-link" href="/logout">logout</a>)
+		{% else %}
+			<a href="/login">login</a> | <a href="/signup">signup</a>
+		{% endif %}
+	</div>
+
+	<br>
+	<div class="content">
+		{% block content %}
+		{% endblock %}
+		{% for button in menu %}
+			<button class="button" onclick='location.href="{{button.link}}";'> 
+				{{button.name}} 
+			</button>
+			<br><br>
+		{% endfor %}
+	</div>
+
+	{% if gid %}
+	<div class="lower-left">
+			{{gid}} | {{g_player[1]}}
+	</div>
+	{% endif %}
+	
+	{% if round %}    
+	<div class="lower-right">
+		<table>
+			<tr><td>Questioner: </td><td>{{round.Questioner.split('|')[0]}}</td></tr>
+			<tr><td>Reader: </td><td>{{round.Reader_Answer.split('|')[0]}}</td></tr>
+			<tr>
+				<td>Players: </td>
+				<td>
+					{% for pseudonym in round.Pseudonym_Answer %}
+						{{pseudonym.split('|')[0]}}, 
+					{% endfor %}
+				</td>
+			</tr>
+		</div>
+	</div>
+	{% endif %}
+</body>
+</html>
+

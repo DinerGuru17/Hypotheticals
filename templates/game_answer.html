@@ -1,0 +1,18 @@
+{% extends "base_round.html" %}
+
+{% block player_type %}
+	<form method="post">
+		<div>Question: {{Question_Text}}</div>
+		<div>
+			Answer: 
+			<input type="text" name="answer" value="{{answer}}">
+		</div>
+		<div class="error">{{error_answer}}</div>
+		<br>
+		<div class="login-box">
+			<input class="button" type="submit" name="button" value="{{submit_text}}">
+		</div>
+		
+		<br>
+	</form>
+{% endblock %}

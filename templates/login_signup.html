@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div>
+		<form method="post">
+			<div class="login-box">
+				<table>
+					<tr> 
+						<td> username: </td>
+						<td> <input type="text" name="username" value="{{username}}"> </td>
+						<td class="error"> {{username_error}} </td>
+					</tr>
+					<tr>
+						<td> password: </td>
+						<td> <input type="password" name="password" value="{{password}}"> </td>
+						<td class="error"> {{password_error}} </td>
+					</tr>
+					{% if page_type == 'submit' %}
+					<tr>
+						<td> verify password: </td>
+						<td> <input type="password" name="verify" value="{{password}}"> </td>
+						<td class="error"> {{verify_error}} </td>
+					</tr>
+					<tr>
+						<td> email (optional): </td>
+						<td> <input type="text" name="email" value="{{email}}"> </td>
+						<td class="error"> {{email_error}} </td>
+					</tr>
+					{% endif %}
+				</table>
+			</div>
+			<br>
+			<div class="login-box">
+				<input class="button" type="submit">
+			</div>
+		</form>
+		<br>
+	</div>
+{% endblock %}

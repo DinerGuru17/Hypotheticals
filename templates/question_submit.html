@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div>
+		<form method="post">
+			<div>
+				question:
+				<br>
+				<input class="question-submit" type="text" name="question" value="{{question}}">
+			</div>
+			<br>
+			<div>
+				category:
+				<br>
+				<select name="category" selected="hypotheticals">
+					<option value="anything_goes">Anything Goes</option>
+					<option value="hypotheticals">Hypothetical</option>
+					<option value="personals">Personal</option>
+					<option value="no_brainers">No-Brainer</option>
+				</select>
+			</div>
+			<br>
+			<div class="error">
+				{{error}}
+			</div>
+			<div>
+				{{message}}
+			</div>
+			<div class="login-box">
+				<input class="button" type="submit">
+			</div>
+			<br>
+		</form>
+	</div>
+{% endblock %}

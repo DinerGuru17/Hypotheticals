@@ -1,0 +1,44 @@
+{% extends "base_round.html" %}
+
+{% block player_type %}
+	{% if round %}
+	<div>Questioner: {{round.Questioner.split('|')[0]}}</div>
+	<div>Question: {{Question_Text}}</div>
+	<br>
+	<table>
+		<tr><td>Pseudonym: </td><td>Answer:</td></tr>
+		<tr>
+			<td>{{round.Reader_Answer.split('|')[0]}}</td>
+			<td>{{round.Reader_Answer.split('|')[1]}}</td>
+		</tr>
+		{% for pseudonym in round.Pseudonym_Answer %}
+		<tr>
+			<td>{{pseudonym.split('|')[0]}}</td>
+			<td>{{pseudonym.split('|')[1]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br>
+	{% endif %}
+	
+	<table>
+		<tr>
+			<td>Pseudonym</td>
+			<td>Score</td>
+		</tr>
+		{% for player in g_players %}
+		<tr>
+			<td>{{player.split('|')[1]}}</td>
+			<td>{{player.split('|')[2]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br>
+	{{round_message}}
+	<form method="post">
+		<div class="login-box">
+			<input class="button" type="submit" name="button" value="{{submit_text}}">
+		</div>
+	</form>
+	<br>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base_round.html" %}
+
+{% block player_type %}
+	<div>Question: {{Question_Text}}</div>
+
+	{% if 'questioner' not in type %}
+	<div> Answer: {{round_me.split('|')[1]}} </div>
+	{% endif %}
+
+	<br>
+	<div>{{game_message}}</div>
+{% endblock %}

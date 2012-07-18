@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div>
+		<div>Game ID: {{gid}}</div>
+		<br>
+		<table>
+			<tr>
+				<td>Player ID</td>
+				<td>Pseudonym</td>
+				<td>Score</td>
+			</tr>
+		{% for player in g_players %}
+			<tr>
+				<td>{{player.split('|')[0]}}</td>
+				<td>{{player.split('|')[1]}}</td>
+				<td>{{player.split('|')[2]}}</td>
+			</tr>
+		{% endfor %}
+		</table>
+		<br>
+		<div class="error">
+			{{error}}
+		</div>
+		<form method="post">
+			<div class="submit-button">
+					<input class="button" type="submit" value="Start Game">
+			</div>
+		</form>
+{% endblock %}
