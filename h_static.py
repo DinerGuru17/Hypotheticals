@@ -9,7 +9,7 @@ class MenuPage(Handler):
 			self.links.append(link_as_dict('Login', '/login'))
 		self.links.append(link_as_dict('Play U.W. Hypotheticals', '/play'))
 		self.links.append(link_as_dict('Submit Questions', '/submitQuestion'))
-		self.links.append(link_as_dict('Read the Rules', '/rules'))
+		self.links.append(link_as_dict('Rules and Info', '/rules'))
 		self.params['menu'] = self.links
 
 		self.render("base.html", **self.params)
